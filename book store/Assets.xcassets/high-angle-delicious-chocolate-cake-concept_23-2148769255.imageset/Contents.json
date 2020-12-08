@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "high-angle-delicious-chocolate-cake-concept_23-2148769255.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "high-angle-delicious-chocolate-cake-concept_23-2148769255@2x.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "high-angle-delicious-chocolate-cake-concept_23-2148769255@3x.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
