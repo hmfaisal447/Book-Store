@@ -14,5 +14,6 @@ struct StoreData {
     let locations = ["Bucharest", "San Cristobal De Las Casas", "Innsbruck", "San Cristobal De Las Casas"]
     let forYouName = ["Winter Festival", "Freedom Life", "Mountains River", "Easy Life"]
     let forYouPrice = ["918$", "1103$", "841$", "136$"]
-    
+    let segmentedOne = ["234$", "345$", "564$", "367$"]
+    let segmentedTwo = ["986$", "123$", "344$", "765$"]
 }

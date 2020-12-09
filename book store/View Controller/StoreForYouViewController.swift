@@ -67,19 +67,18 @@ extension StoreForYouViewController: UICollectionViewDataSource, UICollectionVie
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.identifierfeaturedCell, for: indexPath) as! myCollectionViewCell
-            if segmentedValue == 0 {
                 cell.featuredImageView.image = data.locationImages[indexPath.row]
                 cell.featuredFlowers.text = data.forYouName[indexPath.row]
                 cell.featuredPrice.text = data.forYouPrice[indexPath.row]
-            } else if segmentedValue == 1 {
-                cell.featuredImageView.image = data.locationImages[indexPath.row]
-                cell.featuredFlowers.text = data.forYouName[indexPath.row]
-                cell.featuredPrice.text = data.forYouPrice[indexPath.row]
-            }else if segmentedValue == 2 {
-                cell.featuredImageView.image = data.locationImages[indexPath.row]
-                cell.featuredFlowers.text = data.forYouName[indexPath.row]
-                cell.featuredPrice.text = data.forYouPrice[indexPath.row]
-            }
+//             if segmentedValue == 1 {
+//                cell.featuredImageView.image = data.locationImages[indexPath.row]
+//                cell.featuredFlowers.text = data.forYouName[indexPath.row]
+//                cell.featuredPrice.text = data.segmentedOne[indexPath.row]
+//            }else if segmentedValue == 2 {
+//                cell.featuredImageView.image = data.locationImages[indexPath.row]
+//                cell.featuredFlowers.text = data.forYouName[indexPath.row]
+//                cell.featuredPrice.text = data.segmentedTwo[indexPath.row]
+//            }
             cell.featuredImageView.layer.cornerRadius = 10
             return cell
         }
