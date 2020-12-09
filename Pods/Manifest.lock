@@ -1,0 +1,16 @@
+PODS:
+  - TTSegmentedControl (0.4.10)
+
+DEPENDENCIES:
+  - TTSegmentedControl
+
+SPEC REPOS:
+  trunk:
+    - TTSegmentedControl
+
+SPEC CHECKSUMS:
+  TTSegmentedControl: d8005c0cdca2549ade0aee8e09240723e2478a6a
+
+PODFILE CHECKSUM: 80eecbef631c2014e818ebe3a94d16cdb7bb2cd6
+
+COCOAPODS: 1.10.0

@@ -25,7 +25,7 @@ extension StoreViewController: UICollectionViewDataSource, UICollectionViewDeleg
         return 4
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "gotoForYou", sender: self)
+        self.performSegue(withIdentifier: K.segueForYou, sender: self)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 300)
@@ -33,7 +33,7 @@ extension StoreViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let data = storeData
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! myCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.identifierMyCell, for: indexPath) as! myCollectionViewCell
         cell.locationName.text = data.locationNames[indexPath.row]
         cell.location.text = data.locations[indexPath.row]
         cell.storeImageView.image = data.locationImages[indexPath.row]
