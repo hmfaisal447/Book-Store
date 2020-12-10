@@ -19,6 +19,9 @@
 		83452909257E5EE6009A216A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83452907257E5EE6009A216A /* Main.storyboard */; };
 		8345290E257E5EE9009A216A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8345290C257E5EE9009A216A /* LaunchScreen.storyboard */; };
 		83452917257E6C4E009A216A /* myCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83452916257E6C4E009A216A /* myCollectionViewCell.swift */; };
+		8365146D25821FC000CE2AEA /* StoreAPIDataFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8365146C25821FC000CE2AEA /* StoreAPIDataFile.swift */; };
+		83651470258223C000CE2AEA /* StoreAPIManagerFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8365146F258223C000CE2AEA /* StoreAPIManagerFile.swift */; };
+		836514742582440A00CE2AEA /* StoreReturnDataFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836514732582440A00CE2AEA /* StoreReturnDataFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +52,9 @@
 		8345290D257E5EE9009A216A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8345290F257E5EE9009A216A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83452916257E6C4E009A216A /* myCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCollectionViewCell.swift; sourceTree = "<group>"; };
+		8365146C25821FC000CE2AEA /* StoreAPIDataFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreAPIDataFile.swift; sourceTree = "<group>"; };
+		8365146F258223C000CE2AEA /* StoreAPIManagerFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreAPIManagerFile.swift; sourceTree = "<group>"; };
+		836514732582440A00CE2AEA /* StoreReturnDataFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReturnDataFile.swift; sourceTree = "<group>"; };
 		F7D55B6A2B1D3D1A73078A25 /* Pods_book_store.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_book_store.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -150,6 +156,9 @@
 			isa = PBXGroup;
 			children = (
 				8322AB5D257F6C8800B946A6 /* StoreDataFile.swift */,
+				8365146C25821FC000CE2AEA /* StoreAPIDataFile.swift */,
+				836514732582440A00CE2AEA /* StoreReturnDataFile.swift */,
+				8365146F258223C000CE2AEA /* StoreAPIManagerFile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -281,9 +290,12 @@
 				83452917257E6C4E009A216A /* myCollectionViewCell.swift in Sources */,
 				833797202581017D003ECF6B /* ConstantsFile.swift in Sources */,
 				833797172580BF11003ECF6B /* WinterViewController.swift in Sources */,
+				83651470258223C000CE2AEA /* StoreAPIManagerFile.swift in Sources */,
+				8365146D25821FC000CE2AEA /* StoreAPIDataFile.swift in Sources */,
 				83452904257E5EE6009A216A /* SceneDelegate.swift in Sources */,
 				8322AB7A257F8F3600B946A6 /* StoreForYouViewController.swift in Sources */,
 				8322AB5E257F6C8800B946A6 /* StoreDataFile.swift in Sources */,
+				836514742582440A00CE2AEA /* StoreReturnDataFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

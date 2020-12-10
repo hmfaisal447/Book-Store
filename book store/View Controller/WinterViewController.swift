@@ -8,7 +8,7 @@
 import UIKit
 
 class WinterViewController: UIViewController {
-
+    
     @IBOutlet weak var backbtn: UIButton!
     @IBOutlet weak var desBtn: UIButton!
     @IBOutlet weak var revBtn: UIButton!
@@ -23,8 +23,11 @@ class WinterViewController: UIViewController {
     @IBOutlet weak var winterNameLabel: UILabel!
     @IBOutlet weak var winterPriceLabel: UILabel!
     
-    var storeData = StoreData()
+    var storeDefaultData = StoreDefaultData()
+    var storeValueOneData = StoreValueOneData()
+    var storeValueTwoData = StoreValueTwoData()
     var indexValueIs = 0
+    var segmentedValueIs = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,13 +55,22 @@ class WinterViewController: UIViewController {
         mainView.clipsToBounds = true
         insideView.layer.cornerRadius = 10
         insideView.clipsToBounds = true
-        winterNameLabel.text = storeData.forYouName[indexValueIs]
-        winterPriceLabel.text = storeData.forYouPrice[indexValueIs]
-        imageView.image = storeData.locationImages[indexValueIs]
+        if segmentedValueIs == 1 {
+            winterNameLabel.text = storeValueOneData.locationNames[indexValueIs]
+            winterPriceLabel.text = storeValueOneData.forYouPrice[indexValueIs]
+            imageView.image = storeValueOneData.locationImages[indexValueIs]
+        }else if segmentedValueIs == 2 {
+            winterNameLabel.text = storeValueTwoData.locationNames[indexValueIs]
+            winterPriceLabel.text = storeValueTwoData.forYouPrice[indexValueIs]
+            imageView.image = storeValueTwoData.locationImages[indexValueIs]
+        }else {
+            winterNameLabel.text = storeDefaultData.forYouName[indexValueIs]
+            winterPriceLabel.text = storeDefaultData.forYouPrice[indexValueIs]
+            imageView.image = storeDefaultData.locationImages[indexValueIs]
+        }
     }
     @IBAction func backBtn(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
-        
     }
 }
 class imageView: UIImageView {
@@ -68,10 +80,10 @@ class imageView: UIImageView {
     }
 }
 extension UIView {
-func roundUpCorners(_ corners: UIRectCorner, radius: CGFloat) {
-    let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-    let mask = CAShapeLayer()
-    mask.path = path.cgPath
-    self.layer.mask = mask
-}
+    func roundUpCorners(_ corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
 }

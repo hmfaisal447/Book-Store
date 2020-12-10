@@ -46,6 +46,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9Z-ZO-19o">
                                                 <rect key="frame" x="0.0" y="0.0" width="18.5" height="22"/>
                                                 <state key="normal" image="Group 1"/>
+                                                <connections>
+                                                    <action selector="searchBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="146-bv-B3v"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btq-1F-tMx">
                                                 <rect key="frame" x="38.5" y="0.0" width="18.5" height="22"/>
@@ -93,7 +96,7 @@
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="high-angle-delicious-chocolate-cake-concept_23-2148769255" translatesAutoresizingMaskIntoConstraints="NO" id="1KE-BD-VY9">
                                                             <rect key="frame" x="0.0" y="8" width="307" height="245"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="307" id="61T-pn-Qsr"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="307" id="61T-pn-Qsr"/>
                                                                 <constraint firstAttribute="height" constant="245" id="QTe-gg-RjM"/>
                                                             </constraints>
                                                         </imageView>
@@ -178,6 +181,7 @@
                     <navigationItem key="navigationItem" id="De5-k5-454"/>
                     <connections>
                         <outlet property="storeCollectionView" destination="3ca-qP-hq9" id="mZi-9P-aef"/>
+                        <outlet property="titleLabel" destination="7KX-Mx-Fop" id="24D-eP-hpt"/>
                         <segue destination="oVM-kF-soX" kind="show" identifier="gotoForYou" id="DcZ-9U-HJD"/>
                     </connections>
                 </viewController>
@@ -273,7 +277,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PGJ-CT-oJB">
-                                        <rect key="frame" x="0.0" y="55" width="414" height="337"/>
+                                        <rect key="frame" x="10" y="55" width="394" height="337"/>
                                         <color key="backgroundColor" red="0.95294117647058818" green="0.96078431372549022" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="337" id="GPo-Tw-2dF"/>
@@ -292,7 +296,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="182" height="336"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="purple-glitter-blueberry-cake-with-chocolate-glaze-white-surface-copy-space_107760-509" translatesAutoresizingMaskIntoConstraints="NO" id="rek-6p-L4I">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="purple-glitter-blueberry-cake-with-chocolate-glaze-white-surface-copy-space_107760-509" translatesAutoresizingMaskIntoConstraints="NO" id="rek-6p-L4I">
                                                             <rect key="frame" x="0.0" y="0.0" width="182" height="246"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="246" id="74F-NT-f1B"/>
@@ -468,14 +472,14 @@
                                     <constraint firstAttribute="bottom" secondItem="D38-JQ-1Oq" secondAttribute="bottom" id="30b-7v-ZCy"/>
                                     <constraint firstItem="HlZ-z0-JPP" firstAttribute="leading" secondItem="QmN-Er-StW" secondAttribute="leading" constant="20" id="4Rj-sl-zfz"/>
                                     <constraint firstItem="PGJ-CT-oJB" firstAttribute="top" secondItem="7hU-OT-hO6" secondAttribute="bottom" constant="10" id="9ow-4u-0OY"/>
-                                    <constraint firstAttribute="trailing" secondItem="PGJ-CT-oJB" secondAttribute="trailing" id="BUt-gF-EWG"/>
+                                    <constraint firstAttribute="trailing" secondItem="PGJ-CT-oJB" secondAttribute="trailing" constant="10" id="BUt-gF-EWG"/>
                                     <constraint firstAttribute="trailing" secondItem="D38-JQ-1Oq" secondAttribute="trailing" constant="20" id="Sg4-q8-sFb"/>
                                     <constraint firstItem="D38-JQ-1Oq" firstAttribute="leading" secondItem="QmN-Er-StW" secondAttribute="leading" constant="20" id="U4j-YV-9Jt"/>
                                     <constraint firstItem="7hU-OT-hO6" firstAttribute="leading" secondItem="QmN-Er-StW" secondAttribute="leading" constant="20" id="gYw-XF-v3G"/>
                                     <constraint firstItem="HlZ-z0-JPP" firstAttribute="top" secondItem="PGJ-CT-oJB" secondAttribute="bottom" constant="10" id="l8D-Zv-M7B"/>
                                     <constraint firstItem="7hU-OT-hO6" firstAttribute="top" secondItem="QmN-Er-StW" secondAttribute="top" constant="10" id="lze-pg-Sdj"/>
                                     <constraint firstAttribute="trailing" secondItem="HlZ-z0-JPP" secondAttribute="trailing" constant="20" id="sXJ-kR-DZb"/>
-                                    <constraint firstItem="PGJ-CT-oJB" firstAttribute="leading" secondItem="QmN-Er-StW" secondAttribute="leading" id="z2X-Md-9dt"/>
+                                    <constraint firstItem="PGJ-CT-oJB" firstAttribute="leading" secondItem="QmN-Er-StW" secondAttribute="leading" constant="10" id="z2X-Md-9dt"/>
                                 </constraints>
                             </view>
                         </subviews>

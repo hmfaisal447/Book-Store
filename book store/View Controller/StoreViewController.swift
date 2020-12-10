@@ -10,14 +10,23 @@ import UIKit
 class StoreViewController: UIViewController {
     
     @IBOutlet weak var storeCollectionView: UICollectionView!
+    @IBOutlet weak var titleLabel: UILabel!
     
-    var storeData = StoreData()
-    
+    var storeData = StoreDefaultData()
+    var storeAPIManager = StoreAPIManager()
+    let storeUrl = "https://mybookstores.net/api/course/list/24"
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        storeAPIManager.delegate = self
+        storeAPIManager.performRequest(with: storeUrl)
         storeCollectionView.dataSource = self
         storeCollectionView.delegate = self
     }
+    @IBAction func searchBtn(_ sender: UIButton) {
+    }
+    
+    
 }
 extension StoreViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -39,5 +48,16 @@ extension StoreViewController: UICollectionViewDataSource, UICollectionViewDeleg
         cell.storeImageView.image = data.locationImages[indexPath.row]
         cell.storeImageView.layer.cornerRadius = 10
         return cell
+    }
+}
+extension StoreViewController: StoreAPIManagerDelegate {
+    func didUpdate(storeReturnData: StoreReturnData) {
+        DispatchQueue.main.async {
+            self.titleLabel.text = storeReturnData.name
+        }
+
+    }
+    func didFailWithError(error: Error) {
+        print(error)
     }
 }
