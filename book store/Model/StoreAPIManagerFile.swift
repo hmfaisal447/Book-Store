@@ -39,7 +39,7 @@ struct StoreAPIManager {
             let decodedData = try decoder.decode(StoreAPIData.self, from: getStoreData)
             let name = decodedData.data[0].courseName
             let price = decodedData.data[0].courseDescription
-            let image = decodedData.data[0].avatarPath
+            let image = decodedData.data[1].avatarPath
             let returnValue = StoreReturnData(name: name, price: price, image: image)
             return returnValue
         }catch {

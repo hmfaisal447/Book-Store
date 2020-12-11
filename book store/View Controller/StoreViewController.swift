@@ -62,7 +62,6 @@ extension StoreViewController: StoreAPIManagerDelegate {
             self.returnPrice = storeReturnData.price
             self.returnImage = "https://mybookstores.net/api/media/render/?path=\(storeReturnData.image)"
         }
-
     }
     func didFailWithError(error: Error) {
         print(error)
