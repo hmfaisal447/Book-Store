@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import TTSegmentedControl
-
 class StoreForYouViewController: UIViewController {
     
     @IBOutlet weak var forYouCollectionView: UICollectionView!

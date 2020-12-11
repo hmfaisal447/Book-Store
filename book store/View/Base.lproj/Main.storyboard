@@ -97,23 +97,26 @@
                                                             <rect key="frame" x="0.0" y="8" width="307" height="245"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="307" id="61T-pn-Qsr"/>
-                                                                <constraint firstAttribute="height" constant="245" id="QTe-gg-RjM"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="245" id="QTe-gg-RjM"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aok-PB-8hz">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aok-PB-8hz">
                                                             <rect key="frame" x="5" y="260.5" width="302" height="45.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Librairie" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkq-4z-ubi">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="302" height="21.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="302" height="20.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="Kcz-Yw-iR2"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="18"/>
                                                                     <color key="textColor" red="0.17254901960784313" green="0.1803921568627451" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3hK-Lj-9PD">
-                                                                    <rect key="frame" x="0.0" y="26.5" width="302" height="19"/>
+                                                                    <rect key="frame" x="0.0" y="25.5" width="302" height="20"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awc-ph-Rcb">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="12" height="19"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="12" height="20"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="12" id="vHp-QN-Q80"/>
                                                                                 <constraint firstAttribute="height" constant="19.199999999999999" id="yvo-tp-0h2"/>
@@ -122,7 +125,7 @@
                                                                             <state key="normal" image="location"/>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bucharest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YpM-zx-g4J">
-                                                                            <rect key="frame" x="17" y="0.0" width="285" height="19"/>
+                                                                            <rect key="frame" x="17" y="0.0" width="285" height="20"/>
                                                                             <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
                                                                             <color key="textColor" red="0.50588235294117645" green="0.53725490196078429" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -182,6 +185,7 @@
                     <connections>
                         <outlet property="storeCollectionView" destination="3ca-qP-hq9" id="mZi-9P-aef"/>
                         <outlet property="titleLabel" destination="7KX-Mx-Fop" id="24D-eP-hpt"/>
+                        <outlet property="userImage" destination="BHb-aj-mov" id="5PR-Ib-MLj"/>
                         <segue destination="oVM-kF-soX" kind="show" identifier="gotoForYou" id="DcZ-9U-HJD"/>
                     </connections>
                 </viewController>

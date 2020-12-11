@@ -17,11 +17,9 @@ struct StoreAPIManager {
         if let url = URL(string: storeUrl) {
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
-            request.setValue("Admin", forHTTPHeaderField: "Login")
-            request.setValue("Admin", forHTTPHeaderField: "Password")
-            request.httpBody = "member=John".data(using: .utf8)!
+            request.setValue("true", forHTTPHeaderField: "Skipauth")
             let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { (data, response, error) in
+            let task = session.dataTask(with: request) { (data, response, error) in
                 if error != nil {
                     self.delegate?.didFailWithError(error: error!)
                     return
@@ -39,9 +37,9 @@ struct StoreAPIManager {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(StoreAPIData.self, from: getStoreData)
-            let name = decodedData.data[2].courseName
-            let price = decodedData.data[3].price
-            let image = decodedData.data[5].avatarPath
+            let name = decodedData.data[0].courseName
+            let price = decodedData.data[0].courseDescription
+            let image = decodedData.data[0].avatarPath
             let returnValue = StoreReturnData(name: name, price: price, image: image)
             return returnValue
         }catch {

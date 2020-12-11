@@ -6,11 +6,16 @@
 //
 
 import UIKit
+import Kingfisher
 
 class StoreViewController: UIViewController {
     
     @IBOutlet weak var storeCollectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
+    var returnName = ""
+    var returnPrice = ""
+    var returnImage = ""
     
     var storeData = StoreDefaultData()
     var storeAPIManager = StoreAPIManager()
@@ -41,11 +46,11 @@ extension StoreViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let data = storeData
+        //let data = storeData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.identifierMyCell, for: indexPath) as! myCollectionViewCell
-        cell.locationName.text = data.locationNames[indexPath.row]
-        cell.location.text = data.locations[indexPath.row]
-        cell.storeImageView.image = data.locationImages[indexPath.row]
+        cell.locationName.text = returnName
+        cell.location.text = returnPrice
+        cell.storeImageView.kf.setImage(with: URL(string: returnImage))
         cell.storeImageView.layer.cornerRadius = 10
         return cell
     }
@@ -53,7 +58,9 @@ extension StoreViewController: UICollectionViewDataSource, UICollectionViewDeleg
 extension StoreViewController: StoreAPIManagerDelegate {
     func didUpdate(storeReturnData: StoreReturnData) {
         DispatchQueue.main.async {
-            self.titleLabel.text = storeReturnData.name
+            self.returnName = storeReturnData.name
+            self.returnPrice = storeReturnData.price
+            self.returnImage = "https://mybookstores.net/api/media/render/?path=\(storeReturnData.image)"
         }
 
     }

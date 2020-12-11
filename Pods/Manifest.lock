@@ -1,16 +1,18 @@
 PODS:
-  - TTSegmentedControl (0.4.10)
+  - Kingfisher (5.15.8):
+    - Kingfisher/Core (= 5.15.8)
+  - Kingfisher/Core (5.15.8)
 
 DEPENDENCIES:
-  - TTSegmentedControl
+  - Kingfisher
 
 SPEC REPOS:
   trunk:
-    - TTSegmentedControl
+    - Kingfisher
 
 SPEC CHECKSUMS:
-  TTSegmentedControl: d8005c0cdca2549ade0aee8e09240723e2478a6a
+  Kingfisher: a3c03d702433fa6cfedabb2bddbe076fb8f2e902
 
-PODFILE CHECKSUM: 80eecbef631c2014e818ebe3a94d16cdb7bb2cd6
+PODFILE CHECKSUM: 5e66e1f91b44f7f958c7e927fe723e58ffa3bd7b
 
 COCOAPODS: 1.10.0

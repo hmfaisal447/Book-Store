@@ -4,7 +4,6 @@ target 'book store' do
   use_frameworks!
 
   # Pods for book store
-  
-  pod 'TTSegmentedControl'
+  pod 'Kingfisher'
   
 end
