@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 protocol StoreAPIManagerDelegate {
-    func didUpdate(storeReturnData: StoreReturnData)
+    func didUpdate(storeReturnData: [StoreReturnData])
     func didFailWithError(error: Error)
 }
 struct StoreAPIManager {
@@ -16,8 +16,8 @@ struct StoreAPIManager {
     func performRequest(with storeUrl: String) {
         if let url = URL(string: storeUrl) {
             var request = URLRequest(url: url)
-            request.httpMethod = "GET"
-            request.setValue("true", forHTTPHeaderField: "Skipauth")
+            request.httpMethod = K.Authorization.authGet
+            request.setValue(K.Authorization.authTrue, forHTTPHeaderField: K.Authorization.SkipAuth)
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: request) { (data, response, error) in
                 if error != nil {
@@ -33,15 +33,20 @@ struct StoreAPIManager {
             task.resume()
         }
     }
-    func parseJSON(_ getStoreData: Data) -> StoreReturnData? {
+    func parseJSON(_ getStoreData: Data) -> [StoreReturnData]? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(StoreAPIData.self, from: getStoreData)
-            let name = decodedData.data[0].courseName
-            let price = decodedData.data[0].courseDescription
-            let image = decodedData.data[1].avatarPath
+            var arr: [StoreReturnData] = []
+            for count in 0...3 {
+            let name = decodedData.data[count].courseName
+            let price = decodedData.data[count].courseDescription
+            let image = decodedData.data[count].avatarPath
             let returnValue = StoreReturnData(name: name, price: price, image: image)
-            return returnValue
+            arr.append(returnValue)
+            }
+            return arr
+            
         }catch {
             delegate?.didFailWithError(error: error)
             return nil
